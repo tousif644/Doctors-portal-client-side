@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import auth from '../../../../firebase.init';
 
 const BookingModal = ({ date, treatment, setTreatment,refetch }) => {
-    const { _id, name, slots } = treatment;
+    const { _id, name, slots, price } = treatment;
 
 
     const formattedDate = format(date, "PP");
@@ -69,6 +69,7 @@ const BookingModal = ({ date, treatment, setTreatment,refetch }) => {
                         </div>
 
                         <div>
+                        <input type="text" placeholder="Full Name" className="input input-bordered input-md w-full  my-2" name="name" disabled value= {`Price : ${price}`} />
                             <input type="text" placeholder="Full Name" className="input input-bordered input-md w-full  my-2" name="name" disabled value={`${user?.displayName || ''}`} />
 
                             <input type="text" name='phone' placeholder="Phone Number" className="input input-bordered input-md w-full  my-2" />
